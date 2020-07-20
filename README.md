@@ -14,8 +14,8 @@ For building and running the application you need:
 ### Clone
 To get started you can simply clone this repository using git:
 ```
-git clone https://github.com/giventech/EATestFg.git
-cd EATestFg
+git clone https://github.com/giventech/res-api.git
+cd rest-api
 ```
 
 ### Build an executable JAR
@@ -33,7 +33,7 @@ mvn clean package
 Then you can run the JAR file with:
 
 ```shell
-`java -jar API-0.0.1-SNAPSHOT.jar`
+`java -jar api-0.0.1-SNAPSHOT.jar`
 ```
 
 Another way is to execute the `main` method in the `com.giventech.ApiApplication` class from your IDE. 
@@ -55,16 +55,11 @@ Access the application on localhost:8080:
 http://localhost:8080/returnok
 
 
-### View 
-
-http://localhost:8080/
-
-
 ### Add a team 
 
 Use CURL to test that a records is being added:
-
-curl -d "{\"name\":\"This is a test\"}" -H "Content-Type: application/json"   http://localhost:8080/team
+(Windows terminal needs escape characters)
+curl -d "{\"name\":\"new team\"}" -H "Content-Type: application/json"   http://localhost:8080/team
 
 
 
