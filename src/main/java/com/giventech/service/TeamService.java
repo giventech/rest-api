@@ -5,9 +5,8 @@ import com.giventech.entity.Team;
 import java.util.List;
 
 public interface TeamService {
-    public List<Team> findAllTeams();
-    public Team createTeam(Team team);
-
+    List<Team> findAllTeams();
+    Team createTeam(Team team);
 }
 
 
