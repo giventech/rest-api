@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface TeamService {
     List<Team> findAllTeams();
+
     Team createTeam(Team team);
+
+    Team findTeam(long id);
 }
 
 

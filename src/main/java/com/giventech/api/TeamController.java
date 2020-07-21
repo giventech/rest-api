@@ -6,15 +6,12 @@ import com.giventech.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class SimpleController {
+public class TeamController {
 
     @Autowired
     TeamService  teamService;
@@ -24,7 +21,7 @@ public class SimpleController {
         return new ResponseEntity("It's ok", HttpStatus.OK);
     }
 
-    @GetMapping("teams")
+    @GetMapping("/teams")
     public ResponseEntity<List<Team> > getTeams() {
         List <Team> teams  = teamService.findAllTeams();
         if (teams == null) {
@@ -34,8 +31,14 @@ public class SimpleController {
         }
     }
 
-    @PostMapping("team")
+    @PostMapping("/team")
     public Team  getTeams(@RequestBody Team team) {
       return teamService.createTeam(team);
+    }
+
+    @GetMapping("/team/{id}")
+    @ResponseBody
+    public Team  getTeams(@PathVariable Long id) {
+        return teamService.findTeam(id);
     }
 }
