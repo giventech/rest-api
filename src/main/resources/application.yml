@@ -6,3 +6,9 @@
 #    password=password
 #  jpa
 #    database-platform=org.hibernate.dialect.H2Dialect
+
+spring:
+  jta:
+    atomikos:
+      properties:
+        max-timeout: 900000

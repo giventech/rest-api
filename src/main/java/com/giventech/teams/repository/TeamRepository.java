@@ -1,6 +1,6 @@
-package com.giventech.repository;
+package com.giventech.teams.repository;
 
-import com.giventech.entity.Team;
+import com.giventech.teams.entity.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

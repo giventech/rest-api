@@ -1,6 +1,6 @@
-package com.giventech.service;
+package com.giventech.teams.service;
 
-import com.giventech.entity.Team;
+import com.giventech.teams.entity.Team;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.giventech.api;
+package com.giventech.teams.api;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

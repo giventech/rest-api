@@ -1,8 +1,8 @@
 package com.giventech.test;
 
 
-import com.giventech.entity.Team;
-import com.giventech.repository.TeamRepository;
+import com.giventech.teams.entity.Team;
+import com.giventech.teams.repository.TeamRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

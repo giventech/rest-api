@@ -1,4 +1,4 @@
-package com.giventech.api;
+package com.giventech.teams.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

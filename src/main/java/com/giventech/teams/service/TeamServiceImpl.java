@@ -1,7 +1,7 @@
-package com.giventech.service;
+package com.giventech.teams.service;
 
-import com.giventech.entity.Team;
-import com.giventech.repository.TeamRepository;
+import com.giventech.teams.entity.Team;
+import com.giventech.teams.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

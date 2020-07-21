@@ -1,4 +1,4 @@
-package com.giventech.api;
+package com.giventech.teams.api;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

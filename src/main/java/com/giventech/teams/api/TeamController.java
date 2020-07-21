@@ -1,8 +1,8 @@
-package com.giventech.api;
+package com.giventech.teams.api;
 
 
-import com.giventech.entity.Team;
-import com.giventech.service.TeamService;
+import com.giventech.teams.entity.Team;
+import com.giventech.teams.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

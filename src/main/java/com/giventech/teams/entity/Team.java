@@ -1,4 +1,4 @@
-package com.giventech.entity;
+package com.giventech.teams.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;

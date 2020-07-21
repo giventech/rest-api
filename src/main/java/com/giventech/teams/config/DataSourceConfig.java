@@ -1,5 +1,8 @@
-package com.giventech.config;
+package com.giventech.teams.config;
 
+import org.hibernate.jpa.boot.spi.EntityManagerFactoryBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,5 +22,6 @@ public class DataSourceConfig {
         dataSourceBuilder.password("");
         return dataSourceBuilder.build();
     }
+
 
 }
