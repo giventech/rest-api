@@ -27,13 +27,26 @@ public class TeamRepositoryIntTest {
 
     // write test cases here
     @Test
-    public void whenFindByName_thenReturnEmployee() {
+    public void whenFindAll_thenReturnTeams() {
         // given
+
 
         // when
         List<Team> teams = teamRepository.findAll();
 
         // then
-        assert (teams.size() > 1);
+        assert (teams.size() >= 1);
     }
+
+//    @Test
+//    public void whenFindByName_thenShoudReturn() {
+//        // given
+//        Long id = new java.lang.Long();
+//
+//        // when
+//        List<Team> teams = teamRepository.findAll();
+//
+//        // then
+//        assert (teams.size() >= 1);
+//    }
 }
