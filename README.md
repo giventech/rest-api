@@ -123,3 +123,66 @@ The following guides illustrate how to use some features concretely:
 * [Using Spring Data JDBC](https://github.com/spring-projects/spring-data-examples/tree/master/jdbc/basics)
 
 ~~~~
+Questions
+---------
+
+Why do I need to create and a registry name in AWS ?
+Why can't it just be the same name as the images I am building
+
+
+1)  Set the correct access policies  for the user
+
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Sid":"ListImagesInRepository",
+         "Effect":"Allow",
+         "Action":[
+            "ecr:ListImages"
+         ],
+         "Resource":"arn:aws:ecr:ap-southeast-2:331166605245:repository/demo"
+      },
+      {
+         "Sid":"GetAuthorizationToken",
+         "Effect":"Allow",
+         "Action":[
+            "ecr:GetAuthorizationToken"
+         ],
+         "Resource":"*"
+      },
+      {
+         "Sid":"ManageRepositoryContents",
+         "Effect":"Allow",
+         "Action":[
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:GetRepositoryPolicy",
+                "ecr:DescribeRepositories",
+                "ecr:ListImages",
+                "ecr:DescribeImages",
+                "ecr:BatchGetImage",
+                "ecr:InitiateLayerUpload",
+                "ecr:UploadLayerPart",
+                "ecr:CompleteLayerUpload",
+                "ecr:PutImage"
+         ],
+         "Resource":"arn:aws:ecr:ap-southeast-2:331166605245:repository/demo"
+      }
+   ]
+}
+
+
+2) Build the image locally
+
+docker build -t prioritisation-api -f ./prioritisation-api/Dockerfile ./prioritisation-api  --build-arg REPOSITORY_URL=docker.io  --build-arg SPRING_PROFILE=dev
+3) Login to docker registry 
+aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 331166605245.dkr.ecr.ap-southeast-2.amazonaws.com
+Login Succeeded
+
+4) Tag the image into exisiting repository (name)
+
+docker tag prioritisation-api:latest 331166605245.dkr.ecr.ap-southeast-2.amazonaws.com/demo:latest
+
+5) Push the image on the registry:
+docker push  331166605245.dkr.ecr.ap-southeast-2.amazonaws.com/demo:latest
