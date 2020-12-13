@@ -173,10 +173,16 @@ Why can't it just be the same name as the images I am building
 }
 
 
+2_0) create a repository to store your image
+
+aws ecr create-repository  --repository-name prioritisation-api     --image-scanning-configuration scanOnPush=true    --region ap-southeast-2
+
 2) Build the image locally
 
 docker build -t prioritisation-api -f ./prioritisation-api/Dockerfile ./prioritisation-api  --build-arg REPOSITORY_URL=docker.io  --build-arg SPRING_PROFILE=dev
+
 3) Login to docker registry 
+
 aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 331166605245.dkr.ecr.ap-southeast-2.amazonaws.com
 Login Succeeded
 
@@ -186,3 +192,9 @@ docker tag prioritisation-api:latest 331166605245.dkr.ecr.ap-southeast-2.amazona
 
 5) Push the image on the registry:
 docker push  331166605245.dkr.ecr.ap-southeast-2.amazonaws.com/demo:latest
+
+
+Cluster
+VPC
+Subnets
+Autoscaling groups
